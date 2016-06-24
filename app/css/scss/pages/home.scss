@@ -1,0 +1,36 @@
+.daily{
+
+
+  &-header{
+    height: calc(100vh - #{$nav-height});
+    margin-top: $nav-height;
+    width: 100vw;
+    background-color: green;
+  }
+  
+
+  &-recetas{
+    padding: 2rem 0;
+
+    &--buscador{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    &--conte{
+      padding: 0;
+      background-color: yellow;
+    }
+  }
+
+  &-receta{
+    padding: 1rem;
+
+    section{
+      background-color: pink;
+      height: 15rem;
+      position: relative;
+    }
+  }
+}

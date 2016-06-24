@@ -1,0 +1,51 @@
+$ancho-logo : 10rem;
+
+.daily{
+  &-menu{
+    background-color: $nav-background;
+    box-shadow: $shadow ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: $nav-height;
+    width: 100vw;
+    text-transform: uppercase;
+    position: fixed;
+    font-weight: lighten;
+    &>div{
+      display: flex;
+      justify-content: center;
+    }
+    a{
+      color: #000;
+    }
+  }
+  &-lista{
+    height: $nav-height;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: .8rem;
+    &>li{
+      &:not(:last-child){
+        margin-right: 1rem;
+      }
+    }
+    &--left{
+      margin-left: 4rem;
+    }
+    &--right{
+      margin-left: calc(#{$ancho-logo} + 1rem);
+    }
+  }
+  &-logo{
+    a{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: calc(-1 * #{$ancho-logo} / 2);
+    }
+    img{
+      width: $ancho-logo;
+    }
+  }
+}

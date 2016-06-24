@@ -1,0 +1,38 @@
+@if $incluir-form  == true{
+  /*------------------------------------
+      ·FORMS
+  ------------------------------------*/
+  label,input,button,select,textarea{
+    font-size: $input-size;
+    padding: $input-padding;
+    border-radius: $radius;
+    vertical-align : baseline;
+    font-family : $basefont;
+    display : inline-block;
+    border: $input-border;
+    background-color: $input-background;
+    
+  }
+  ::input-placeholder{
+    color: $input-color;
+  }
+
+  input,
+  textarea,
+  select{
+    width: 100%;
+  }
+
+  input:required:focus:invalid{
+    // background-color: lighten($color-alert, 5%);
+    border: 1px solid $color-alert;
+  }
+
+  input:required:focus:valid{
+    // background-color: lighten($color-success, 40%);
+    border: 1px solid $color-success;
+  }
+  textarea{
+    resize: vertical;
+  }
+}

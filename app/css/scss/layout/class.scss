@@ -1,0 +1,132 @@
+/*------------------------------------
+    ·CLASES
+    ------------------------------------*/
+.centrador{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.txt-center{
+  text-align: center;
+}
+.fullScreen{
+  width: 100vw;
+  height: 100vh;
+}
+.flex{
+  display: flex;
+}
+.justify-right{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container{
+  @include max-width($pagemaxwidth);
+}
+
+
+.h1{
+  font-size: 1.8rem;
+  @include respond-to(l){
+    font-size: 2.8rem;
+  }
+}
+
+.txt-xs{
+  font-size: 1rem;
+}
+.txt-s{
+  font-size: 1.2rem;
+}
+.txt-m{
+  font-size: 1.5rem;
+}
+.txt-l{
+  font-size: 1.8rem;
+}
+.txt-xl{
+  font-size: 2.1rem;
+}
+@include respond-to(l){
+  .txt-xs{
+    font-size: 1.2rem;
+  }
+  .txt-s{
+    font-size: 1.5rem;
+  }
+  .txt-m{
+    font-size: 2rem;
+  }
+  .txt-l{
+    font-size: 2.5rem;
+  }
+  .txt-xl{
+    font-size: 3.5rem;
+  }
+}
+
+
+
+.modal{
+  background-color: rgba(black,.8);
+  height: 100vh;
+  width: 100vw;
+  padding: 1rem;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: .3s all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: $index-0;
+  h3{
+    color: white;
+  }
+  &>div{
+    position: relative;
+    background-color: gray;
+    padding: 1rem 2rem;
+  }
+  &-cerrar{
+    border: none;
+    background-color: red;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+    z-index: $index-4;
+  }
+}
+
+.fadeIn {
+  opacity: 1;
+  visibility: visible;
+  z-index: $index-4;
+}
+.fadeOut {
+  opacity: 0;
+  visibility: hidden;
+  z-index: $index-0;
+}
+
+
