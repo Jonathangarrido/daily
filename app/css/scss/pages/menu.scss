@@ -11,7 +11,8 @@ $ancho-logo : 10rem;
     width: 100vw;
     text-transform: uppercase;
     position: fixed;
-    font-weight: lighten;
+    font-weight: 300;
+    z-index: $index-3;
     &>div{
       display: flex;
       justify-content: center;
@@ -27,14 +28,14 @@ $ancho-logo : 10rem;
     padding-bottom: .8rem;
     &>li{
       &:not(:last-child){
-        margin-right: 1rem;
+        margin-right: 1.2rem;
       }
     }
     &--left{
-      margin-left: 4rem;
+      margin-left: 3rem;
     }
     &--right{
-      margin-left: calc(#{$ancho-logo} + 1rem);
+      margin-left: calc(#{$ancho-logo} + 2rem);
     }
   }
   &-logo{

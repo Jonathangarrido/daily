@@ -16,11 +16,15 @@
       display: flex;
       justify-content: center;
       margin-bottom: 2rem;
+      input{
+        width: 20rem;
+        padding: .25rem;
+        font-size: 1rem;
+      }
     }
 
     &--conte{
       padding: 0;
-      background-color: yellow;
     }
   }
 
