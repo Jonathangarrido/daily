@@ -1,40 +1,285 @@
+$btn-video: 3rem;
+
 .daily{
 
 
   &-header{
-    height: calc(100vh - #{$nav-height});
-    margin-top: $nav-height;
+    height: 30rem;
     width: 100vw;
-    background-color: green;
+    background:{
+      image: url('#{$image-dir}/small-home-parachuparselosdedos.jpg');
+      repeat: no-repeat;
+      size: cover;
+      position: center center;
+      // attachment: fixed;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: $nav-height-mobile;
+    @include respond-to(m){
+      height: 35rem;
+    }
+    @include respond-to(l){
+      background-image: url('#{$image-dir}/home-parachuparselosdedos.jpg');
+    }
+    @include respond-to(xl){
+      height: calc(100vh - #{$nav-height});
+      margin-top: $nav-height;
+    }
   }
   
+  &-galeria{
 
-  &-recetas{
-    padding: 2rem 0;
-
-    &--buscador{
-      display: flex;
-      justify-content: center;
-      margin-bottom: 2rem;
-      input{
-        width: 20rem;
-        padding: .25rem;
-        font-size: 1rem;
+    &-recetas{
+      min-height: 25rem;
+      padding: 2rem 0;
+      background:{
+        color: #fff;
+        image: url('#{$image-dir}/fondo-colores.jpg');
+        repeat: no-repeat;
+        size: cover;
+        position: center center;
+        // attachment: fixed;
       }
     }
+    &--buscador{
+      // background-color: pink;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding: 0 1rem;
+      @include respond-to(l){
+        flex-direction: row;
+      }
+      @include respond-to(xl){
+        padding: 0 0;
+      }
+      &>div{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: .25rem;
+        @include respond-to(l){
+          flex-direction: row;
+          margin-bottom: 0;
+        }
+      }
+      select {
+        background-color: #fff;
+        width: 100%;
+        color: #000;
+        cursor: pointer;
+        border: 2px solid white;
+        font-size: 1rem;
+        padding: .25em;
+        padding-right: 1em;
+        appearance: none;
+        @include respond-to(l){
+          width: 100%;
+        }
+      }
+      .label-select{
+        width: 100%;
+        position: relative;
+        &:before, &:after {
+          content: "";
+          position: absolute;
+        }
+        &:after {
+          color: #000;
+          font-size: inherit;
+          content: "▼";
+          height: 100%;
+          display: flex;
+          align-items: center;
+          pointer-events: none;
+          right: 0; 
+          top: 0;
+          vertical-align: middle;
+          padding: 0 .5em;
+          // border-left: 1px solid #000;
+        }
+        margin-bottom: .5rem;
+        &:not(:last-child){
+          margin-right: 1rem;
+        }
+        @include respond-to(l){
+          width: 50%;
+          margin-bottom: 0;
+        }
+      }
+      .search{
+        display: flex;
+        justify-content: flex-end;
+        
+      }
+      
+      .label-search{
+        width: 100%;
+        position: relative;
+        &:before, &:after {
+          content: "";
+          position: absolute;
+        }
+        &:after{
+          color: #000;
+          font-size: inherit;
+          content: "\1F50D";
+          height: 100%;
+          display: flex;
+          align-items: center;
+          pointer-events: none;
+          right: 0; 
+          top: 0;
+          vertical-align: middle;
+          padding: 0 .5em;
+        }
+        @include respond-to(l){
+          width: 75%;
+        }
 
+      }
+
+      input{
+        border: none;
+        border-radius: $radius;
+        width: 100%;
+        padding: .35em .25em;
+        font-size: 1rem;
+        padding-right: 1em;
+        @include respond-to(l){
+          width: 100%;
+        }
+      }
+      
+    }
     &--conte{
       padding: 0;
     }
-  }
+    &--receta{
+      
+      &:hover{
+        .video{
+          opacity: .7;
+        }
+        .sombra{
+          opacity: 0;
+        }
+        .badget{
+          bottom: 0;
+          opacity: 1;
+        }
+        img{
+          transform: scale(1.1, 1.1);
+        }
+      }
+      section{
+        // background-color: pink;
+        height: 15rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: .75rem 1.5rem;
+        overflow: hidden;
+      }
+      .sombra{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: $index-2;
+        background: radial-gradient(ellipse at center, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%);
+        opacity: .3;
+        width: 100%;
+        height: 100%;
+        transition: $animation;
+      }
+      .video{
+        height: $btn-video;
+        width: $btn-video;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: calc(#{$btn-video} / -2);
+        margin-top: calc(#{$btn-video} / -2);
 
-  &-receta{
-    padding: 1rem;
-
-    section{
-      background-color: pink;
-      height: 15rem;
-      position: relative;
+        border-top: calc(#{$btn-video} / 2) solid transparent;
+        border-left: calc(#{$btn-video}) solid #fff;
+        border-bottom: calc(#{$btn-video} / 2) solid transparent;
+        
+        opacity: .4;
+        transition: $animation;
+        z-index: $index-2;
+      }
+      .badget{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #E2231A;
+        z-index: $index-2;
+        color: #fff;
+        padding: .25rem .5rem;
+        opacity: 1;
+        transition: $animation;
+        font-size: 1rem;
+        font-weight: 300;
+        @include respond-to(l){
+          opacity: 0;
+          bottom: -3rem;
+        }
+      }
+      img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 110%;
+        z-index: $index-1;
+        transition: all 2s;
+      }
+      h2{
+        letter-spacing: .12rem;
+        font-family: 'lobster';
+        font-size: 1.8rem;
+        z-index: $index-2;
+        position: relative;
+        color: #fff;
+        text-align: center;
+        line-height: .9;
+      }
     }
+
+  }
+  
+}
+
+.btn-down{
+  height: 3rem;
+  width: 3rem;
+  border: solid 1px #fff;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all ease-in .1s;
+  svg{
+    width: 1rem;
+  }
+  polygon{
+    transition: all ease-in .1s;
+  }
+  &:hover{
+    background-color: rgba(white,.8);
+    polygon{
+      fill: gray;
+    }
+  }
+  @include respond-to(l){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
   }
 }

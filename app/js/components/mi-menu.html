@@ -1,18 +1,39 @@
 <nav class="daily-menu">
-  <div class="container">
-    <ul class="daily-lista daily-lista--left">
-      <li><a href="http://www.dailyfoods.cl/es">inicio</a></li>
-      <li>stevia</li>
-      <li>novedades</li>
-      <li>productos</li>
-    </ul>
-    <div class="daily-logo">
-      <a href="http://www.dailyfoods.cl/es"><img src="./images/logo-daily.svg" alt="logo"></a>
+  <div>
+    <div class="daily-menu--desk container">
+      <ul>
+        <li><a ng-href="http://www.dailyfoods.cl/es">inicio</a></li>
+        <li><a ng-href="http://www.dailyfoods.cl/es/sabias-que">sabías qué</a></li>
+        <li><a ng-href="http://www.dailyfoods.cl/es/novedades">novedades</a></li>
+        <li><a ng-href="http://www.dailyfoods.cl/es/productos">productos</a></li>
+      </ul>
+      <ul>
+        <li><a ng-href="#/">parachuparselosdedos</a></li>
+        <li><a ng-href="http://www.dailyfoods.cl/es/multimedia">multimedia</a></li>
+        <li><a ng-href="http://www.dailyfoods.cl/es/comunidad">comunidad</a></li>
+        <li><a ng-href="http://www.dailyfoods.cl/es/contacto">contacto</a></li>
+      </ul>
     </div>
-    <ul class="daily-lista daily-lista--right">
-      <li>parachuparselosdedos</li>
-      <li><a href="http://www.dailyfoods.cl/es/multimedia">multimedia</a></li>
-      <li><a href="http://www.dailyfoods.cl/es/contacto">contacto</a></li>
-    </ul>
+    <div class="daily-menu--logo">
+      <a ng-href="http://www.dailyfoods.cl/" >
+        <img ng-src="./images/logo-daily.svg" alt="logo">
+      </a>
+      <!-- <a ng-href="http://www.dailyfoods.cl/mobile/es.html" class="daily-menu--logo-mobile">
+        <img ng-src="./images/logo-daily.svg" alt="logo">
+      </a> -->
+    </div>
+    <div class="daily-menu--mobile">
+      <input type="checkbox" id="menuCheck">
+      <label for="menuCheck"></label>
+      <ul>
+        <li><a ng-href="#/" class="backHome">Parachuparselosdedos</a></li>
+        <li><a ng-href="http://www.dailyfoods.cl/mobile/endulzantes.html">Productos</a></li>
+        <li><a ng-href="http://www.dailyfoods.cl/mobile/contacto.html">Contacto</a></li>
+      </ul>
+      <div class="tapar"></div>
+      
+      
+    </div>
+
   </div>
 </nav>

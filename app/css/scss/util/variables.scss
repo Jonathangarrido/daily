@@ -3,10 +3,11 @@
 // -------------------------------------
 
 $incluir-grid						: true;
-$incluir-form						: true;
-$incluir-table					: true;
+$incluir-form						: false;
+$incluir-table					: false;
 $incluir-iconos					: true;
-$incluir-angular-animate: true;
+$incluir-video          : true;
+$incluir-angular-animate : false;
 
 
 // -------------------------------------
@@ -22,7 +23,7 @@ $breakpoints: (
   s: 320px, 
   m: 440px, 
   l: 720px, 
-  xl: 1200px
+  xl: 1100px
 );
 
 // -------------------------------------
@@ -46,7 +47,7 @@ $font-dir: "../font";
 // Definimos elementos constantes del layout
 $baselineheight : 1.5em;
 $pagemaxwidth 	: 1200px;
-$radius 				: 0;
+$radius 				: 5px;
 $hovertransition: .3s;
 $animationtime 	: .3s;
 $animation			: all ease-in $animationtime;
@@ -142,6 +143,9 @@ $tableborderstyle   : solid;
 $nav-color: $textcolor;
 $nav-background: #fff;
 $nav-height: 4.2rem;
+$nav-height-mobile: 3rem;
+
+
 
 // -------------------------------------
 //      ·FORM

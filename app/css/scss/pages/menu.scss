@@ -1,52 +1,146 @@
-$ancho-logo : 10rem;
+$ancho-logo : 10.3rem;
+$ancho-logo-mobile : 7.5rem;
 
-.daily{
-  &-menu{
+.daily-menu{
+  background-color: $nav-background;
+  top: 0;
+  left: 0;
+  text-transform: uppercase;
+  position: absolute;
+  font-weight: 300;
+  z-index: $index-3;
+  @include respond-to(xl){
+    position: fixed;
     background-color: $nav-background;
-    box-shadow: $shadow ;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: $nav-height;
+    box-shadow: $shadow ; 
+  }
+  &>div{
+    position: relative;
+    height: $nav-height-mobile;
     width: 100vw;
-    text-transform: uppercase;
-    position: fixed;
-    font-weight: 300;
-    z-index: $index-3;
-    &>div{
-      display: flex;
-      justify-content: center;
-    }
-    a{
-      color: #000;
+    @include respond-to(xl){
+      height: $nav-height;
     }
   }
-  &-lista{
-    height: $nav-height;
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: .8rem;
-    &>li{
+  &--desk{
+    height: 100%;
+    display: none;
+    @include respond-to(xl){
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    ul{
+      display: flex;
+      margin-left: 16.5rem;
+      margin-bottom: .8rem;
+      &:first-child{
+        margin-left: 4.3rem;
+        min-width: 20.5rem;
+      }
+    }
+    li{
       &:not(:last-child){
         margin-right: 1.2rem;
       }
     }
-    &--left{
-      margin-left: 3rem;
-    }
-    &--right{
-      margin-left: calc(#{$ancho-logo} + 2rem);
-    }
+
   }
-  &-logo{
-    a{
-      position: absolute;
-      top: 0;
-      left: 50%;
+  &--logo{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: $ancho-logo-mobile;
+    height: 100%;
+    margin-left: calc(-1 * #{$ancho-logo-mobile} / 2);
+    @include respond-to(xl){
+      left: 47.59%;
+      width: $ancho-logo;
       margin-left: calc(-1 * #{$ancho-logo} / 2);
     }
-    img{
-      width: $ancho-logo;
+    a{
+      z-index: $index-4;
+      position: relative
+    }
+    // &-mobile{
+    //   @include respond-to(xl){
+    //     display: none;
+    //   }
+    // }
+    // &-desk{
+    //   display: none;
+    //   @include respond-to(xl){
+    //     display: inline-block;
+    //   }
+    // }
+  }
+  &--mobile{
+    background-color: pink;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include respond-to(xl){
+      display: none;
+    }
+    ul{
+      background-color: #fff;
+      position: absolute;
+      padding-top: 1.5rem;
+      top: -5rem;
+      left: 0;
+      width: 100vw;
+      transition: $animation;
+    }
+    li{
+      &:not(:last-child){
+        border-bottom: 1px solid #d0d0d0;
+      }
+    }
+    a{
+      display: block;
+      text-align: center;
+      padding: .25rem;
+    }
+    .tapar{
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: $nav-height-mobile;
+      width: 100vw;
+    }
+    label{
+      margin-right: 1rem;
+      margin-bottom: -.75rem;
+      position: relative;
+      z-index: $index-3;
+      cursor: pointer;
+      &:before{
+        content: '\e906';
+        font-family: 'icomoon';
+        font-size: 2rem;
+      }
+    }
+    input{
+      display: none;
+      &:checked{
+        ~ ul{
+          top: $nav-height-mobile;
+        }
+        ~ label{
+          &:before{
+            content: '\e910';
+          }
+        }
+      }
     }
   }
+
+  
+  a{
+    color: #000;
+  }
 }
+

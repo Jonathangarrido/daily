@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="es" ng-app="dailyApp">
-<head>
-  <meta charset="UTF-8">
-  <title>Chupatelosdedos</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
-  <meta name="theme-color" content="#eeb542">
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="./css/app.css">
-  <meta>
-</head>
-<body>
-  <!--[if lt IE 8]>
-    <p class="browsehappy">Estás usando un navegador <strong>desactualizado</strong>.Por favor <a href="http://browsehappy.com/">actualiza tu navegador</a>Para mejorar la experien
-  <![endif]-->
-  
-  <mi-menu></mi-menu>
+  <head>
+    <meta charset="UTF-8">
+    <title>Parachuparselosdedos</title>
+    <!-- <base href="http://localhost:5555/"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
+    <meta name="theme-color" content="#E2231A">
+    <link href='https://fonts.googleapis.com/css?family=Lobster|Roboto+Condensed:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./css/app.css">
+    <meta>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browsehappy">Estás usando un navegador <strong>desactualizado</strong>.Por favor <a href="http://browsehappy.com/">actualiza tu navegador</a>Para mejorar la experien
+    <![endif]-->
+    
+    <mi-menu></mi-menu>
+    
+    <ng-view class="view-principal"></ng-view>
 
-  <ng-view></ng-view>
-
-  <script src="./lib/angular/angular.js"></script>
-  <script src="./lib/angular-route/angular-route.js"></script>
-  <script src="./js/app.js"></script>
-  <script src="./js/components/mi-menu.js"></script>
-  <script src="./js/components/mi-home.js"></script>
-</body>
+    <script src="./lib/angular/angular.min.js"></script>
+    <script src="./lib/angular-route/angular-route.min.js"></script>
+    <script src="./lib/angular-animate/angular-animate.min.js"></script>
+    <script src="./lib/angular-resource/angular-resource.min.js"></script>
+    <script src="./lib/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/components/mi-menu.js"></script>
+    <script src="./js/components/mi-home.js"></script>
+    <script src="./js/components/mi-receta.js"></script>
+    <script src="./js/services/api-service.js"></script>
+    <script src="./lib/jquery/dist/jquery.min.js"></script>
+    <script src="./lib/angular-google-analytics/dist/angular-google-analytics.min.js"></script>
+      
+  </body>
 </html>

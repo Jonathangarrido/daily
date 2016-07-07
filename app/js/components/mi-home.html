@@ -1,109 +1,58 @@
 <header class="daily-header">
   
+  <span class="btn-down c-visible-l" ng-click="$ctrl.abajo()">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       viewBox="90.5 253.5 612 354.8" enable-background="new 90.5 253.5 612 354.8" xml:space="preserve">
+      <g>
+        <g>
+          <polygon fill="#e5e5e5" points="131.4,253.5 90.5,293.2 396.5,608.3 702.5,293.2 661.5,253.5 396.5,526.3"/>
+        </g>
+      </g>
+    </svg>
 
+  </span>
 </header>
 
-<section class="daily-recetas">
-  <div class="daily-recetas--buscador container">
-    <input type="text" id="search">
-    <label for="search">B</label>
+<section class="daily-galeria-recetas">
+  <div class="daily-galeria--buscador container row">
+    <div class="c100-s c55-l">
+      <label class="label-select" for="select1">
+        <select id="select1" ng-model='$ctrl.search.categoria'>
+          <option value="">Categoria</option>
+          <option ng-repeat='cate in $ctrl.categorias' value="{{cate.categoria}}">{{cate.categoria}}</option>
+        </select>
+      </label>
+      <label class="label-select" for="select2">
+        <select id="select2" ng-model='$ctrl.search.producto'>
+          <option value="">Producto Daily</option>
+          <option ng-repeat='productos in $ctrl.productos' value="{{productos.producto}}">{{productos.producto}}</option>
+        </select>
+      </label>
+    </div>
+    <div class="c100-s c45-l search">
+      <label class="label-search" for="search">
+        <input type="text" id="search" ng-model="$ctrl.search.titulo">
+      </label>
+    </div>
+
   </div>
-  <div class="daily-recetas--conte row container">
-    <article class="c100-s c50-m c33-l c25-xl daily-receta">
-      <a href="">
+
+
+  <div class="daily-galeria--conte row container">
+
+
+    <article class="c100-s c50-m c33-l c25-xl daily-galeria--receta" ng-repeat="receta in $ctrl.recetas | filter: $ctrl.search" >
+      <a ng-href="#/receta/{{receta.id}}" >
         <section>
-          <img src="" alt="receta">
-          <h2>titulo</h2>
+          <div class="sombra"></div>
+          <div class="badget">{{receta.producto}}</div>
+          <div class="video" ng-show="receta.video"></div>
+          <img ng-src="./images/recetas/{{receta.imagen}}.jpg" alt="{{receta.titulo}}">
+          <h2>{{receta.titulo}}</h2>
         </section>
       </a>
     </article>
-    <article class="c100-s c50-m c33-l c25-xl daily-receta">
-      <a href="">
-        <section>
-          <img src="" alt="receta">
-          <h2>titulo</h2>
-        </section>
-      </a>
-    </article>
-    <article class="c100-s c50-m c33-l c25-xl daily-receta">
-      <a href="">
-        <section>
-          <img src="" alt="receta">
-          <h2>titulo</h2>
-        </section>
-      </a>
-    </article>
-    <article class="c100-s c50-m c33-l c25-xl daily-receta">
-      <a href="">
-        <section>
-          <img src="" alt="receta">
-          <h2>titulo</h2>
-        </section>
-      </a>
-    </article>
-    <article class="c100-s c50-m c33-l c25-xl daily-receta">
-      <a href="">
-        <section>
-          <img src="" alt="receta">
-          <h2>titulo</h2>
-        </section>
-      </a>
-    </article>
-    <article class="c100-s c50-m c33-l c25-xl daily-receta">
-      <a href="">
-        <section>
-          <img src="" alt="receta">
-          <h2>titulo</h2>
-        </section>
-      </a>
-    </article>
-    <article class="c100-s c50-m c33-l c25-xl daily-receta">
-      <a href="">
-        <section>
-          <img src="" alt="receta">
-          <h2>titulo</h2>
-        </section>
-      </a>
-    </article>
-    <article class="c100-s c50-m c33-l c25-xl daily-receta">
-      <a href="">
-        <section>
-          <img src="" alt="receta">
-          <h2>titulo</h2>
-        </section>
-      </a>
-    </article>
-    <article class="c100-s c50-m c33-l c25-xl daily-receta">
-      <a href="">
-        <section>
-          <img src="" alt="receta">
-          <h2>titulo</h2>
-        </section>
-      </a>
-    </article>
-    <article class="c100-s c50-m c33-l c25-xl daily-receta">
-      <a href="">
-        <section>
-          <img src="" alt="receta">
-          <h2>titulo</h2>
-        </section>
-      </a>
-    </article>
-    <article class="c100-s c50-m c33-l c25-xl daily-receta">
-      <a href="">
-        <section>
-          <img src="" alt="receta">
-          <h2>titulo</h2>
-        </section>
-      </a>
-    </article>
-    <article class="c100-s c50-m c33-l c25-xl daily-receta">
-      <a href="">
-        <section>
-          <img src="" alt="receta">
-          <h2>titulo</h2>
-        </section>
-      </a>
-    </article>
+
+
   </div>
 </section>

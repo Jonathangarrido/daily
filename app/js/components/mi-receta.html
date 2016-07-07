@@ -1,0 +1,52 @@
+<section class="daily-receta">
+  <header class="daily-receta--header">
+    
+    <picture>
+      <source ng-srcset="./images/recetas/{{$ctrl.receta.imagen}}.jpg" media="(max-width: 719px)">
+      <source ng-srcset="./images/recetas/{{$ctrl.receta.imagen}}-fondo.jpg" media="(min-width: 720px)">
+      <img ng-srcset="./images/recetas/{{$ctrl.receta.imagen}}.jpg" alt="{{$ctrl.receta.titulo}}">
+    </picture>
+    
+  </header>
+  <section class="daily-receta--section container">
+    <div>
+      <article>
+        <h1>{{$ctrl.receta.titulo}}</h1>
+
+        <!-- video -->
+        <div class="flex-video-conte youtube-container" ng-show="$ctrl.receta.video">
+           <div class="flex-video youtube-player" data-id="{{$ctrl.receta.video}}"></div>
+        </div>
+        
+        <!-- ingredientes -->
+        <ul class="row" ng-show="$ctrl.receta.ingredientes">
+          <p class="c100-s"><b>Ingredientes</b></p>
+          <li class="c100-s c40-l lista" ng-repeat="ingre in $ctrl.ingredientes" ng-bind-html="ingre"></li>
+        </ul>
+        
+        <!-- ingredientes agregado -->
+        <ul class="row" ng-show="$ctrl.receta.agregado">
+          <p class="c100-s"><b><i>{{$ctrl.receta.agregado}}</i></b></p>
+          <li class="c100-s c40-l lista" ng-repeat="agreIngre in $ctrl.agregadoIngrediente" ng-bind-html="agreIngre"></li>
+        </ul>
+        
+        <!-- preparacion -->
+        <ul ng-show="$ctrl.receta.preparacion">
+          <p><b>Preparación</b></p>
+          <li ng-bind-html="$ctrl.preparacion"></li>
+        </ul>
+        
+        <!-- preparacion agregado -->
+        <ul ng-show="$ctrl.receta.agregadoPreparacion">
+          <p><b><i>Preparación {{$ctrl.receta.agregado}}</i></b></p>
+          <li ng-bind-html="$ctrl.agregadoPreparacion"></li>
+        </ul>
+          
+        <!-- descripcion -->
+        <p ng-bind-html="$ctrl.receta.descripcion" ng-show="$ctrl.receta.descripcion"></p>
+
+      </article>
+      <a href="#/" class="btn-back">Volver a recetas</a>
+    </div>
+  </section>
+</section>

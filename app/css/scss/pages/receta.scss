@@ -1,0 +1,81 @@
+.daily-receta{
+  padding: $nav-height-mobile 0 2rem;
+
+  @include respond-to(xl){
+    padding: $nav-height 0 2rem;
+  }
+
+  &--header{
+    overflow: hidden;
+    max-height: 25rem;
+    position: relative;
+  }
+
+  &--section{
+    max-width: calc(#{$pagemaxwidth} - 7rem);
+    @include respond-to(xl){
+      padding: 0;
+    }
+    &>div{
+      background-color: #fff;
+      margin-top: -2rem;
+      position: relative;
+      z-index: $index-2;
+      padding: 2rem;
+      box-shadow: $shadow;
+      @include respond-to(l){
+        margin-top: -6rem;
+      }
+    }
+    h1{
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
+      font-family: 'Lobster';
+      letter-spacing: .1rem;
+      line-height: .9;
+      @include respond-to(l){
+        font-size: 2.8rem;
+        letter-spacing: .12rem;
+      }
+    }
+    p{
+      font-size: 1rem;
+      margin-bottom: .5rem;
+    }
+    ul{
+      justify-content: flex-start;
+      
+    }
+    .lista{
+      &:before{
+        content: '·';
+      }
+      &:nth-child(2){
+        &:before{
+          margin-right: .25rem;
+        }
+      }
+
+    }
+  }
+}
+
+.flex-video-conte{
+  margin-bottom: 1rem;
+}
+
+a.btn-back{
+  position: absolute;
+  right: .5rem;
+  bottom: .5rem;
+  background-color: red;
+  padding: .1rem 1rem;
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 300;
+}
+
+.youtube-container { display: block;}
+.youtube-player { display: block; width: 100%; /* assuming that the video has a 16:9 ratio */ padding-bottom: 56.25%; overflow: hidden; position: relative; width: 100%; height: 100%; cursor: hand; cursor: pointer; display: block; }
+img.youtube-thumb { bottom: 0; display: block; left: 0; margin: auto; max-width: 100%; width: 100%; position: absolute; right: 0; top: 0; height: auto }
+div.play-button { height: 72px; width: 72px; left: 50%; top: 50%; margin-left: -36px; margin-top: -36px; position: absolute; background: url("http://i.imgur.com/TxzC70f.png") no-repeat; }
