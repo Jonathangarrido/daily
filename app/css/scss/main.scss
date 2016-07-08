@@ -17,14 +17,3 @@
 @import 'pages/home';
 @import 'pages/receta';
 
-
-.view-principal{
-  opacity: .5;
-  transition: all 3s lineal;
-  &.ng-enter{
-    opacity: 1;
-  }
-  &.ng-leave{
-    opacity: 0;
-  }
-}

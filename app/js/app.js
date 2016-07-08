@@ -16,7 +16,7 @@
       });
 
       // initial configuration
-        AnalyticsProvider.setAccount('UA-46960782-1');
+        AnalyticsProvider.setAccount('UA-40787317-3');
 
         // track all routes/states (or not)
         AnalyticsProvider.trackPages(true);
@@ -40,7 +40,6 @@
     .module('dailyApp', [
       'ngRoute',
       'ngResource',
-      'ngAnimate',
       'ngSanitize',
       'miMenu',
       'miHome',
