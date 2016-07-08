@@ -20,8 +20,13 @@ function miHomeCtrl(Consultas,Analytics) {
     getRecetas();
     getProductos();
     getCategorias();
+    top();
   }
-
+  //
+  function top(){
+    console.log('top')
+    window.scrollTo(0,0); 
+  }
 
   // obtengo recetas
   function getRecetas() {

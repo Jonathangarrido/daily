@@ -45,4 +45,27 @@
       opacity: 0 ;
     }
   }
+
+
+
+
+  .view{
+    transition:0.5s linear all;
+  }
+  .view.ng-enter {
+    opacity:0;
+  }
+
+  .view.ng-enter.ng-enter-active {
+    opacity:1;
+  }
+
+  .view.ng-leave {
+    opacity:1;
+  }
+  .view.ng-leave.ng-leave-active {
+    opacity:0;
+  }
+
+
 }

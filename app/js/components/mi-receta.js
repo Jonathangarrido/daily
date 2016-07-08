@@ -18,7 +18,12 @@ function miRecetaCtrl(Consultas,$location,Analytics) {
 
   function activate(){
     getReceta();
+    setTimeout(top, 400);
     
+  }
+  // TOP
+  function top(){
+    window.scrollTo(0,0); 
   }
 
   // obtengo receta
@@ -48,7 +53,7 @@ function miRecetaCtrl(Consultas,$location,Analytics) {
           var v = document.getElementsByClassName("youtube-player");
            for (var n = 0; n < v.length; n++) {
              var p = document.createElement("div");
-             p.innerHTML = labnolThumb(vm.receta.imagen);
+             p.innerHTML = labnolThumb(vm.receta.video);
              p.onclick = labnolIframe;
              v[n].appendChild(p);
            }

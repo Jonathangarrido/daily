@@ -39,6 +39,7 @@
   angular
     .module('dailyApp', [
       'ngRoute',
+      'ngAnimate',
       'ngResource',
       'ngSanitize',
       'miMenu',
