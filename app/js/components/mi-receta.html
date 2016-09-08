@@ -11,7 +11,10 @@
   <section class="daily-receta--section container">
     <div>
       <article>
-        <h1>{{$ctrl.receta.titulo}}</h1>
+        <header>
+          <h1>{{$ctrl.receta.titulo}}</h1>
+          <p class="porcion" ng-show="$ctrl.receta.porcion">{{$ctrl.receta.porcion}}</p>
+        </header>        
 
         <!-- video -->
         <div class="flex-video-conte youtube-container" ng-show="$ctrl.receta.video">
